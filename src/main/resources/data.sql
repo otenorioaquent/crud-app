@@ -23,3 +23,29 @@ INSERT INTO person (
     'NC',
     '28801'
 );
+
+INSERT INTO client (
+    client_name,
+    client_address,
+    city,
+    state,
+    zip_code,
+    website_uri,
+    phone_number
+) VALUES (
+    'Aquent1',
+    '456 Any St.',
+    'Brooklyn',
+    'NY',
+    '11232',
+    'aquent.com',
+    '1112223333'
+    ), (
+    'Aquent2',
+    '567 Any St.',
+    'Brooklyn',
+    'NY',
+    '11232',
+    'alsoaquent.com',
+    '9998887777'
+    );

@@ -13,10 +13,10 @@ Add ability to manage clients (companies):
 * The user should be able to create, edit, delete and list Clients.
 * Clients should have a company name, website URI, phone number, and physical/mailing address.
 * Clients can have zero, one, or multiple associated contacts.
-* When editing a person, the user should be able to choose the associated client.
-* When viewing a person, the associated client should be shown.
-* When viewing a client, the associated contacts should be shown.
-* When editing a client, the user should be able to add or remove associated contacts.
+* When editing a com.aquent.crudapp.client, the user should be able to choose the associated com.aquent.crudapp.client.
+* When viewing a com.aquent.crudapp.client, the associated com.aquent.crudapp.client should be shown.
+* When viewing a com.aquent.crudapp.client, the associated contacts should be shown.
+* When editing a com.aquent.crudapp.client, the user should be able to add or remove associated contacts.
 
 ## Story #2
 
