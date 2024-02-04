@@ -4,38 +4,38 @@
       xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Person Listing</title>
+    <title>Client Listing</title>
   </head>
   <body>
-    <h1>Person Listing</h1>
-    <p><a href="/client/create">Create New Person</a></p>
-    <th:block th:unless="${#lists.isEmpty(persons)}">
+    <h1>Client Listing</h1>
+    <p><a href="/client/create">Create New Client</a></p>
+    <th:block th:unless="${#lists.isEmpty(clients)}">
       <table>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email Address</th>
+            <th>Name</th>
+            <th>Address</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <th:block th:each="com.aquent.crudapp.client : ${persons}">
+          <th:block th:each="client : ${clients}">
             <tr>
-              <td th:text="${client.firstName}">First</td>
-              <td th:text="${client.lastName}">Last</td>
-              <td th:text="${client.emailAddress}">first.last@email.com</td>
+              <td th:text="${client.clientName}">Name</td>
+              <td th:text="${client.clientAddress}">client@email.com</td>
               <td>
-                <a th:href="'/com.aquent.crudapp.client/edit/' + ${client.personId}">Edit Person</a>
-                <a th:href="'/com.aquent.crudapp.client/delete/' + ${client.personId}">Delete Person</a>
+                <a th:href="'/com.aquent.crudapp.client/edit/' + ${client.clientId}">Edit Client</a>
+                <a th:href="'/com.aquent.crudapp.client/delete/' + ${client.clientId}">Delete Client</a>
               </td>
             </tr>
           </th:block>
         </tbody>
       </table>
     </th:block>
-    <th:block th:if="${#lists.isEmpty(persons)}">
+    <th:block th:if="${#lists.isEmpty(clients)}">
       <p>No results found.</p>
     </th:block>
+    <br/>
+    <a href="/">Homepage</a>
   </body>
 </html>

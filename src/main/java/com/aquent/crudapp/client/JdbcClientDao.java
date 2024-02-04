@@ -30,18 +30,6 @@ public class JdbcClientDao implements ClientDao {
                                                   + " VALUES (:clientName, :clientAddress, :city, :state, :zipCode, :websiteURI, :phoneNumber)";
 
 
-    public Client mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Client client = new Client();
-        client.setClientId(rs.getInt("client_id"));
-        client.setClientName(rs.getString("client_name"));
-        client.setClientAddress(rs.getString("client_address"));
-        client.setCity(rs.getString("city"));
-        client.setState(rs.getString("state"));
-        client.setZipCode(rs.getString("zip_code"));
-        client.setWebsiteURI(rs.getString("website_uri"));
-        client.setPhoneNumber(rs.getString("phone_number"));
-        return client;
-    }
 
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;

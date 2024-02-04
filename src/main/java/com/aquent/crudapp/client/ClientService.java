@@ -11,44 +11,44 @@ import java.util.List;
 public interface ClientService {
 
     /**
-     * Retrieves all of the com.aquent.crudapp.client records.
+     * Retrieves all the client records.
      *
-     * @return list of com.aquent.crudapp.client records
+     * @return list of client records
      */
     List<Client> listClients();
 
     /**
-     * Creates a new com.aquent.crudapp.client record.
+     * Creates a new client record.
      *
      * @param client the values to save
-     * @return the new com.aquent.crudapp.client ID
+     * @return the new client ID
      */
     Integer createClient(Client client);
 
     /**
-     * Retrieves a com.aquent.crudapp.client record by ID.
+     * Retrieves a client record by ID.
      *
-     * @param id the com.aquent.crudapp.client ID
-     * @return the com.aquent.crudapp.client record
+     * @param id the client ID
+     * @return the client record
      */
     Client readClient(Integer id);
 
     /**
-     * Updates an existing com.aquent.crudapp.client record.
+     * Updates an existing client record.
      *
      * @param client the new values to save
      */
     void updateClient(Client client);
 
     /**
-     * Deletes a com.aquent.crudapp.client record by ID.
+     * Deletes a client record by ID.
      *
-     * @param id the com.aquent.crudapp.client ID
+     * @param id the client ID
      */
     void deleteClient(Integer id);
 
     /**
-     * Validates populated com.aquent.crudapp.client data.
+     * Validates populated client data.
      *
      * @param client the values to validate
      * @return list of error messages

@@ -12,7 +12,7 @@
       <p>Please correct the following errors in your submission:</p>
       <ul>
         <th:block th:each="error : ${errors}">
-          <li>${error}</li>
+          <li>[[${error.toString()}]]</li>
         </th:block>
       </ul>
     </th:block>
@@ -41,5 +41,7 @@
       <br/>
       <input type="submit" name="Submit" value="Submit"/>
     </form>
+    <br/>
+    <a href="/">Homepage</a>
   </body>
 </html>

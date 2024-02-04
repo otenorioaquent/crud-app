@@ -35,9 +35,9 @@ public class ClientController {
     }
 
     /**
-     * Renders an empty form used to create a new com.aquent.crudapp.client record.
+     * Renders an empty form used to create a new client record.
      *
-     * @return create view populated with an empty com.aquent.crudapp.client
+     * @return create view populated with an empty client
      */
     @GetMapping(value = "create")
     public ModelAndView create() {

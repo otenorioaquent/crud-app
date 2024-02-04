@@ -55,6 +55,7 @@ public class DefaultClientService implements ClientService {
         clientDao.deleteClient(id);
     }
 
+    //    TODO: something is amiss with errors generated here, maybe the ArrayList of type String on line 62?
     @Override
     public List<String> validateClient(Client client) {
         Set<ConstraintViolation<Client>> violations = validator.validate(client);

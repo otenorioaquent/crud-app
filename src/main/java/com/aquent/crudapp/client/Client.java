@@ -15,7 +15,7 @@ public class Client {
     private String clientName;
 
     @NotNull
-    @Size(min = 1, max = 50, message = "Mailing address is required with maximum length of 50")
+    @Size(min = 1, max = 50, message = "Address is required with maximum length of 50")
     private String clientAddress;
 
     @NotNull
@@ -52,7 +52,7 @@ public class Client {
         return clientName;
     }
 
-    public void setClientName(String firstName) {
+    public void setClientName(String clientName) {
         this.clientName = clientName;
     }
 
