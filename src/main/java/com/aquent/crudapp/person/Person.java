@@ -114,4 +114,5 @@ public class Person {
     public void setAssociatedClient(String associatedClient) {
         this.associatedClient = associatedClient;
     }
+
 }

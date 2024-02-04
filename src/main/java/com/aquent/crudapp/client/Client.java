@@ -38,7 +38,7 @@ public class Client {
     @Size(min = 10, max = 10, message = "Phone Number is required (length of 10 characters required)")
     private String phoneNumber;
 
-    @Size(max = 50, message = "Associated Contact can't be more than 50 characters")
+    @Size(max = 50, message = "Associated Contact can't have more than 50 characters")
     private String associatedPerson;
 
 

@@ -30,8 +30,8 @@
               <td th:text="${person.firstName}">First</td>
               <td th:text="${person.lastName}">Last</td>
               <td th:text="${person.emailAddress}">first.last@email.com</td>
-              <td th:if="${person.associatedClient != null}"  th:text="${person.associatedClient}">Associated Client</td>
-              <td th:if="${person.associatedClient == null}" th:text="--"></td>
+              <td th:if="${person.associatedClient != null}"  th:text="${person.associatedClient}"  style="text-align: center">Associated Client</td>
+              <td th:if="${person.associatedClient == null}" th:text="--"  style="text-align: center"></td>
               <td>
                 <a th:href="'/person/edit/' + ${person.personId}">Edit</a>
                 <a th:href="'/person/delete/' + ${person.personId}">Delete</a>
