@@ -1,18 +1,19 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Edit Person</title>
   </head>
   <body>
+    <p><a href="/">Homepage</a> > <a href="/person/list">Persons List</a> > Edit</p>
     <h1>Edit Person</h1>
     <th:block th:unless="${#lists.isEmpty(errors)}">
       <p>Please correct the following errors in your submission:</p>
       <ul>
         <th:block th:each="error : ${errors}">
-          <li>${error}</li>
+          <li>[[${error.toString()}]]</li>
         </th:block>
       </ul>
     </th:block>
@@ -40,9 +41,12 @@
       <label for="zipCode">Zip Code:</label>
       <input type="text" name="zipCode" th:value="${person.zipCode}"/>
       <br/>
+      <label for="associatedClient">Associated Client:</label>
+      <input type="text" name="associatedPerson" th:value="${client.associatedClient}"/>
+      <br/>
       <input type="submit" name="Submit" value="Submit"/>
     </form>
     <br/>
-    <a href="/">Homepage</a>
+    <a href="/">Back to Homepage</a>
   </body>
 </html>

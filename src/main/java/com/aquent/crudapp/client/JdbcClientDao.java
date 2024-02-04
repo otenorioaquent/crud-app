@@ -23,11 +23,11 @@ public class JdbcClientDao implements ClientDao {
     private static final String SQL_LIST_CLIENTS = "SELECT * FROM client ORDER BY client_name, client_id";
     private static final String SQL_READ_CLIENT = "SELECT * FROM client WHERE client_id = :clientId";
     private static final String SQL_DELETE_CLIENT = "DELETE FROM client WHERE client_id = :clientId";
-    private static final String SQL_UPDATE_CLIENT = "UPDATE client SET (client_name, client_address, city, state, zip_code, website_uri, phone_number)"
-                                                  + " = (:clientName, :clientAddress, :city, :state, :zipCode, :websiteURI, :phoneNumber)"
+    private static final String SQL_UPDATE_CLIENT = "UPDATE client SET (client_name, client_address, city, state, zip_code, website_uri, phone_number, associated_person)"
+                                                  + " = (:clientName, :clientAddress, :city, :state, :zipCode, :websiteURI, :phoneNumber, :associatedPerson)"
                                                   + " WHERE client_id = :clientId";
-    private static final String SQL_CREATE_CLIENT = "INSERT INTO client (client_name, client_address, city, state, zip_code, website_uri, phone_number)"
-                                                  + " VALUES (:clientName, :clientAddress, :city, :state, :zipCode, :websiteURI, :phoneNumber)";
+    private static final String SQL_CREATE_CLIENT = "INSERT INTO client (client_name, client_address, city, state, zip_code, website_uri, phone_number, associated_person)"
+                                                  + " VALUES (:clientName, :clientAddress, :city, :state, :zipCode, :websiteURI, :phoneNumber, :associatedPerson)";
 
 
 
@@ -59,7 +59,8 @@ public class JdbcClientDao implements ClientDao {
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = false)
     public void updateClient(Client client) {
-        namedParameterJdbcTemplate.update(SQL_UPDATE_CLIENT, new BeanPropertySqlParameterSource(client));
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        namedParameterJdbcTemplate.update(SQL_UPDATE_CLIENT, new BeanPropertySqlParameterSource(client), keyHolder);
     }
 
     @Override
@@ -86,6 +87,7 @@ public class JdbcClientDao implements ClientDao {
             client.setZipCode(rs.getString("zip_code"));
             client.setWebsiteURI(rs.getString("website_uri"));
             client.setPhoneNumber(rs.getString("phone_number"));
+            client.setAssociatedPerson(rs.getString("associated_person"));
             return client;
         }
     }

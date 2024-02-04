@@ -33,7 +33,7 @@ INSERT INTO client (
     website_uri,
     phone_number
 ) VALUES (
-    'Aquent1',
+    'Example 1',
     '456 Any St.',
     'Brooklyn',
     'NY',
@@ -41,7 +41,7 @@ INSERT INTO client (
     'aquent.com',
     '1112223333'
     ), (
-    'Aquent2',
+    'Example 2',
     '567 Any St.',
     'Brooklyn',
     'NY',

@@ -1,20 +1,25 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Client Listing</title>
+    <title>Clients List</title>
   </head>
   <body>
-    <h1>Client Listing</h1>
-    <p><a href="/client/create">Create New Client</a></p>
+    <a href="/">Homepage</a>
+    <div>
+      <h1>Clients List</h1>
+      <button><a href="/client/create">Create New Client</a></button>
+    </div>
+    <br/>
     <th:block th:unless="${#lists.isEmpty(clients)}">
       <table>
         <thead>
           <tr>
             <th>Name</th>
             <th>Address</th>
+            <th>Associated Contact</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -23,9 +28,11 @@
             <tr>
               <td th:text="${client.clientName}">Name</td>
               <td th:text="${client.clientAddress}">client@email.com</td>
+              <td th:if="${client.associatedPerson != null}"  th:text="${client.associatedPerson}" style="text-align: center">Associated Contact</td>
+              <td th:if="${client.associatedPerson == null}" th:text="--" style="text-align: center"></td>
               <td>
-                <a th:href="'/com.aquent.crudapp.client/edit/' + ${client.clientId}">Edit Client</a>
-                <a th:href="'/com.aquent.crudapp.client/delete/' + ${client.clientId}">Delete Client</a>
+                <a th:href="'/client/edit/' + ${client.clientId}">Edit</a>
+                <a th:href="'/client/delete/' + ${client.clientId}">Delete</a>
               </td>
             </tr>
           </th:block>
@@ -36,6 +43,5 @@
       <p>No results found.</p>
     </th:block>
     <br/>
-    <a href="/">Homepage</a>
   </body>
 </html>

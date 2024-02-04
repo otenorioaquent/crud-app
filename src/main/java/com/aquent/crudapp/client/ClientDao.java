@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Operations on the "person" table.
+ * Operations on the "client" table.
  */
 @Repository
 public interface ClientDao {
@@ -17,13 +17,15 @@ public interface ClientDao {
      */
     List<Client> listClients();
 
+
     /**
      * Creates a new com.aquent.crudapp.client record.
      *
      * @param client the values to save
-     * @return the new com.aquent.crudapp.client ID
+     * @return the new client ID
      */
     Integer createClient(Client client);
+
 
     /**
      * Retrieves a com.aquent.crudapp.client record by ID.
@@ -33,12 +35,14 @@ public interface ClientDao {
      */
     Client readClient(Integer id);
 
+
     /**
      * Updates an existing com.aquent.crudapp.client record.
      *
      * @param client the new values to save
      */
     void updateClient(Client client);
+
 
     /**
      * Deletes a com.aquent.crudapp.client record by ID.

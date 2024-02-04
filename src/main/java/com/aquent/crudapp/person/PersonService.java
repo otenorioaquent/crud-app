@@ -10,12 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public interface PersonService {
 
+
     /**
      * Retrieves all of the person records.
      *
      * @return list of person records
      */
     List<Person> listPeople();
+
 
     /**
      * Creates a new person record.
@@ -25,6 +27,7 @@ public interface PersonService {
      */
     Integer createPerson(Person person);
 
+
     /**
      * Retrieves a person record by ID.
      *
@@ -33,6 +36,7 @@ public interface PersonService {
      */
     Person readPerson(Integer id);
 
+
     /**
      * Updates an existing person record.
      *
@@ -40,12 +44,14 @@ public interface PersonService {
      */
     void updatePerson(Person person);
 
+
     /**
      * Deletes a person record by ID.
      *
      * @param id the person ID
      */
     void deletePerson(Integer id);
+
 
     /**
      * Validates populated person data.

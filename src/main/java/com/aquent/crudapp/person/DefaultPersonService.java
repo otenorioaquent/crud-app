@@ -55,7 +55,6 @@ public class DefaultPersonService implements PersonService {
         personDao.deletePerson(id);
     }
 
-    //    TODO: something is amiss with errors generated here, maybe the ArrayList of type String on line 62?
     @Override
     public List<String> validatePerson(Person person) {
         Set<ConstraintViolation<Person>> violations = validator.validate(person);

@@ -70,10 +70,10 @@ public class ClientController {
     }
 
     /**
-     * Renders an edit form for an existing com.aquent.crudapp.client record.
+     * Renders an edit form for an existing client record.
      *
-     * @param clientId the ID of the com.aquent.crudapp.client to edit
-     * @return edit view populated from the com.aquent.crudapp.client record
+     * @param clientId the ID of the client to edit
+     * @return edit view populated from the client record
      */
     @GetMapping(value = "edit/{clientId}")
     public ModelAndView edit(@PathVariable Integer clientId) {

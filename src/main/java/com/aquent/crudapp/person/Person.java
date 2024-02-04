@@ -38,6 +38,11 @@ public class Person {
     @Size(min = 5, max = 5, message = "Zip code is required with length 5")
     private String zipCode;
 
+    @Size(max = 50, message = "Associated Client can't have more than 50 characters")
+    private String associatedClient;
+
+
+
     public Integer getPersonId() {
         return personId;
     }
@@ -100,5 +105,13 @@ public class Person {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getAssociatedClient() {
+        return associatedClient;
+    }
+
+    public void setAssociatedClient(String associatedClient) {
+        this.associatedClient = associatedClient;
     }
 }

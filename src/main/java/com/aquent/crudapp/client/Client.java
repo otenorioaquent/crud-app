@@ -11,32 +11,35 @@ public class Client {
     private Integer clientId;
 
     @NotNull
-    @Size(min = 1, max = 50, message = "Client name is required with maximum length of 50")
+    @Size(min = 1, max = 50, message = "Client name is required (max 50 characters)")
     private String clientName;
 
     @NotNull
-    @Size(min = 1, max = 50, message = "Address is required with maximum length of 50")
+    @Size(min = 1, max = 50, message = "Address is required (max 50 characters)")
     private String clientAddress;
 
     @NotNull
-    @Size(min = 1, max = 50, message = "City is required with maximum length of 50")
+    @Size(min = 1, max = 50, message = "City is required (max 50 characters)")
     private String city;
 
     @NotNull
-    @Size(min = 2, max = 2, message = "State is required with length 2")
+    @Size(min = 2, max = 2, message = "State is required (length of 2 characters required)")
     private String state;
 
     @NotNull
-    @Size(min = 5, max = 5, message = "Zip code is required with length 5")
+    @Size(min = 5, max = 5, message = "Zip code is required (length of 5 characters required)")
     private String zipCode;
 
     @NotNull
-    @Size(min = 5, max = 30, message = "Website URI is required with minimum length 5 and maximum length 30")
+    @Size(min = 5, max = 30, message = "Website URI is required (min 5 characters, max 30 characters")
     private String websiteURI;
 
     @NotNull
-    @Size(min = 10, max = 10, message = "Phone Number is required with length 10")
+    @Size(min = 10, max = 10, message = "Phone Number is required (length of 10 characters required)")
     private String phoneNumber;
+
+    @Size(max = 50, message = "Associated Contact can't be more than 50 characters")
+    private String associatedPerson;
 
 
 
@@ -103,4 +106,13 @@ public class Client {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public String getAssociatedPerson() {
+        return associatedPerson;
+    }
+
+    public void setAssociatedPerson(String associatedPerson) {
+        this.associatedPerson = associatedPerson;
+    }
+
 }

@@ -17,6 +17,7 @@ public interface PersonDao {
      */
     List<Person> listPeople();
 
+
     /**
      * Creates a new person record.
      *
@@ -24,6 +25,7 @@ public interface PersonDao {
      * @return the new person ID
      */
     Integer createPerson(Person person);
+
 
     /**
      * Retrieves a person record by ID.
@@ -33,12 +35,14 @@ public interface PersonDao {
      */
     Person readPerson(Integer id);
 
+
     /**
      * Updates an existing person record.
      *
      * @param person the new values to save
      */
     void updatePerson(Person person);
+
 
     /**
      * Deletes a person record by ID.
