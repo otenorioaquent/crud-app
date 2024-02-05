@@ -4,29 +4,36 @@
       xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <title>Persons List</title>
   </head>
   <body>
-    <a href="/">Homepage</a>
-    <div>
-      <h1>Persons List</h1>
-      <button><a href="/person/create">Create New Person</a></button>
+    <div class="d-flex justify-content-center">
+      <a class="p-2" href="/">Homepage</a>
+    </div>
+    <h1 class="text-center">Persons List</h1>
+    <br/>
+    <div class="text-center">
+      <a class="btn btn-primary mx-3" href="/person/create" role="button">Create New Person</a>
     </div>
     <br/>
     <th:block th:unless="${#lists.isEmpty(persons)}">
-      <table>
+      <table class="table">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email Address</th>
-            <th>Street Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip Code</th>
-            <th>Associated Client</th>
-            <th>Actions</th>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Street Address</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Zip Code</th>
+            <th scope="col">Associated Client</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
