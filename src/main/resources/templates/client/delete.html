@@ -11,14 +11,27 @@
     <title>Delete Client</title>
   </head>
   <body>
-    <p><a href="/">Homepage</a> > <a href="/client/list">Client List</a> > Delete</p>
-    <h1>Delete Client</h1>
-    <p>You are about to delete the client <th:block th:text="${client.clientName}" />:  Are you sure?</p>
-    <form action="/client/delete" method="post">
-      <input type="hidden" name="clientId" th:value="${client.clientId}"/>
-      <input type="submit" name="command" value="Cancel"/>
-      <input type="submit" name="command" value="Delete"/>
-    </form>
+    <div class="d-flex">
+      <a class="p-2" href="/">Homepage</a>
+      >
+      <a class="p-2" href="/client/list">Client List</a>
+      > Delete
+    </div>
+    <div class="container">
+      <div class="col-lg my-auto py-3 mx-auto">
+        <h1>Delete Client</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-lg my-auto py-3 mx-auto">
+        <p>You are about to delete the client <th:block th:text="${client.clientName}" />:  Are you sure?</p>
+        <form action="/client/delete" method="post">
+          <input type="hidden" name="clientId" th:value="${client.clientId}"/>
+          <input type="submit" name="command" value="Cancel"/>
+          <input type="submit" name="command" value="Delete"/>
+        </form>
+      </div>
+    </div>
     <br/>
   </body>
 </html>

@@ -11,17 +11,32 @@
     <title>Edit Client</title>
   </head>
   <body>
-    <p><a href="/">Homepage</a> > <a href="/client/list">Client List</a> > Edit</p>
-    <h1>Edit Client</h1>
+    <div class="d-flex">
+      <a class="p-2" href="/">Homepage</a>
+       >
+      <a class="p-2" href="/client/list">Client List</a>
+       > Edit
+    </div>
+    <div class="container">
+      <div class="col-lg my-auto py-3 mx-auto">
+        <h1>Edit Client</h1>
+      </div>
+    </div>
     <th:block th:unless="${#lists.isEmpty(errors)}">
-      <p>Please correct the following errors in your submission:</p>
-      <ul>
-        <th:block th:each="error : ${errors}">
-          <li>[[${error.toString()}]]</li>
-        </th:block>
-      </ul>
+      <div class="container">
+        <div class="col-lg my-auto py-3 mx-auto">
+          <p>Please correct the following errors in your submission:</p>
+          <ul>
+            <th:block th:each="error : ${errors}">
+              <li>[[${error.toString()}]]</li>
+            </th:block>
+          </ul>
+        </div>
+      </div>
     </th:block>
-    <form action="/client/edit/" method="POST">
+    <div class="container">
+      <div class="col-lg my-auto py-3 mx-auto">
+        <form action="/client/edit/" method="POST">
       <input type="hidden" name="clientId" th:value="${client.clientId}"/>
       <br/>
       <label for="firstName">Name:</label>
@@ -50,6 +65,8 @@
       <br/>
       <input type="submit" name="Submit" value="Submit"/>
     </form>
+      </div>
+    </div>
     <br/>
   </body>
 </html>

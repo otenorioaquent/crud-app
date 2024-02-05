@@ -11,17 +11,32 @@
     <title>Create Person</title>
   </head>
   <body>
-    <p><a href="/">Homepage</a> > <a href="/person/list">Persons List</a> > Create</p>
-    <h1>Create Person</h1>
+    <div class="d-flex">
+      <a class="p-2" href="/">Homepage</a>
+      >
+      <a class="p-2" href="/person/list">Persons List</a>
+      > Create
+    </div>
+    <div class="container">
+      <div class="col-lg my-auto py-3 mx-auto">
+        <h1>Create Person</h1>
+      </div>
+    </div>
     <th:block th:unless="${#lists.isEmpty(errors)}">
-      <p>Please correct the following errors in your submission:</p>
-      <ul>
-        <th:block th:each="error : ${errors}">
-          <li>[[${error.toString()}]]</li>
-        </th:block>
-      </ul>
+      <div class="container">
+        <div class="col-lg my-auto py-3 mx-auto">
+          <p>Please correct the following errors in your submission:</p>
+          <ul>
+            <th:block th:each="error : ${errors}">
+              <li>[[${error.toString()}]]</li>
+            </th:block>
+          </ul>
+        </div>
+      </div>
     </th:block>
-    <form action="/person/create" method="POST">
+    <div class="container">
+      <div class="col-lg my-auto py-3 mx-auto">
+        <form action="/person/create" method="POST">
       <br/>
       <label for="firstName">First Name:</label>
       <input type="text" name="firstName" th:value="${person.firstName}"/>
@@ -49,6 +64,8 @@
       <br/>
       <input type="submit" name="Submit" value="Submit"/>
     </form>
+      </div>
+    </div>
     <br/>
   </body>
 </html>
