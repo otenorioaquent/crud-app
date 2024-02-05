@@ -43,6 +43,18 @@
       <label for="associatedPerson">Associated Contact:</label>
       <input type="text" name="associatedPerson" th:value="${client.associatedPerson}"/>
       <br/>
+<!--      need to sort out how to access listPeople() value to populate options for Contact Assignment -->
+<!--      <label for="associatedPerson">Associated Contact:</label>-->
+<!--      <select id="associatedPerson">-->
+<!--        <option value="" selected="">&#45;&#45;</option>-->
+<!--        <option th:each="person : ${persons}"-->
+<!--          th:value="${person.personId}"-->
+<!--          th:text="${person.firstName + ' ' + person.lastName}"-->
+<!--        ></option>-->
+<!--        <option value="1">One</option>-->
+<!--        <option value="2">two</option>-->
+<!--      </select>-->
+      <br/>
       <input type="submit" name="Submit" value="Submit"/>
     </form>
     <br/>

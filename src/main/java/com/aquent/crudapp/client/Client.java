@@ -1,7 +1,10 @@
 package com.aquent.crudapp.client;
 
+import com.aquent.crudapp.person.Person;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * The com.aquent.crudapp.client entity corresponding to the "com.aquent.crudapp.client" table in the database.

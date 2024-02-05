@@ -17,9 +17,14 @@
       <table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email Address</th>
+            <th>Street Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
             <th>Associated Client</th>
             <th>Actions</th>
           </tr>
@@ -27,10 +32,15 @@
         <tbody>
           <th:block th:each="person : ${persons}">
             <tr>
-              <td th:text="${person.firstName}">First</td>
-              <td th:text="${person.lastName}">Last</td>
-              <td th:text="${person.emailAddress}">first.last@email.com</td>
-              <td th:if="${person.associatedClient != null}"  th:text="${person.associatedClient}"  style="text-align: center">Associated Client</td>
+              <td th:text="${person.personId}"></td>
+              <td th:text="${person.firstName}"></td>
+              <td th:text="${person.lastName}"></td>
+              <td th:text="${person.emailAddress}"></td>
+              <td th:text="${person.streetAddress}"></td>
+              <td th:text="${person.city}"></td>
+              <td th:text="${person.state}"></td>
+              <td th:text="${person.zipCode}"></td>
+              <td th:if="${person.associatedClient != null}"  th:text="${person.associatedClient}"  style="text-align: center"></td>
               <td th:if="${person.associatedClient == null}" th:text="--"  style="text-align: center"></td>
               <td>
                 <a th:href="'/person/edit/' + ${person.personId}">Edit</a>

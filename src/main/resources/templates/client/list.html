@@ -17,8 +17,14 @@
       <table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Website</th>
+            <th>Phone Number</th>
             <th>Associated Contact</th>
             <th>Actions</th>
           </tr>
@@ -26,8 +32,14 @@
         <tbody>
           <th:block th:each="client : ${clients}">
             <tr>
-              <td th:text="${client.clientName}">Name</td>
-              <td th:text="${client.clientAddress}">client@email.com</td>
+              <td th:text="${client.clientId}"></td>
+              <td th:text="${client.clientName}"></td>
+              <td th:text="${client.clientAddress}"></td>
+              <td th:text="${client.city}"></td>
+              <td th:text="${client.state}"></td>
+              <td th:text="${client.zipCode}"></td>
+              <td th:text="${client.websiteURI}"></td>
+              <td th:text="${client.phoneNumber}"></td>
               <td th:if="${client.associatedPerson != null}"  th:text="${client.associatedPerson}" style="text-align: center">Associated Contact</td>
               <td th:if="${client.associatedPerson == null}" th:text="--" style="text-align: center"></td>
               <td>
