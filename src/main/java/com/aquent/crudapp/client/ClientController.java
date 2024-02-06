@@ -1,5 +1,7 @@
 package com.aquent.crudapp.client;
 
+import com.aquent.crudapp.person.Person;
+import com.aquent.crudapp.person.PersonService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,10 +19,13 @@ public class ClientController {
     public static final String COMMAND_DELETE = "Delete";
 
     private final ClientService clientService;
+//    private final PersonService personService;
 
-    public ClientController(ClientService clientService) {
+    public ClientController(ClientService clientService, PersonService personService) {
         this.clientService = clientService;
+//        this.personService = personService;
     }
+
 
     /**
      * Renders the listing page.
@@ -42,6 +47,7 @@ public class ClientController {
     @GetMapping(value = "create")
     public ModelAndView create() {
         ModelAndView mav = new ModelAndView("client/create");
+//        mav.addObject("persons", new Person());
         mav.addObject("client", new Client());
         mav.addObject("errors", new ArrayList<String>());
         return mav;
